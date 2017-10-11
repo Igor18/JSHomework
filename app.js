@@ -51,3 +51,34 @@ for(let element of arr){
 	}
 }
 console.log(res);
+
+// ------------------------------------------------ДЗ 2------------------------------------------------
+// Task 12
+// Создать объект Date, который содержит завтрашнюю дату, первое число текущего
+// месяца, последнее число текущего месяца
+let date = new Date();
+date.setDate(date.getDate()+1); //завтра
+console.log(date);
+date.setDate(1);  // первое число
+console.log(date);
+date.setMonth(date.getMonth(date)+1); //последнее число
+date.setDate(0);
+console.log(date);
+
+// Task 13
+// Измерить время суммирования чисел от 1 до 1000.
+let start = Date.now();
+let sum = 0;
+for (let i = 0; i < 1000000; i++){  // от 1 до 1000 суммирует слишком быстро и разница (end - start) всегда 0
+	sum += i;
+}
+let end = Date.now();
+console.log("Сумма = " + sum);
+console.log("Время - " + (end - start));
+
+// Task 14
+// Подсчитать количество дней с текущей даты до Нового года
+let now = Date.now();
+let newYear = (new Date(2018,0,1)).getTime();
+let daysResult = (newYear - now) / (1000 * 60 * 60 * 24);
+console.log(daysResult);
